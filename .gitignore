@@ -1,0 +1,5 @@
+__pycache__/
+RedditAPI.py
+.~lock.testset.csv#
+.~lock.test_stopwords.csv#
+.~lock.preprocessed.csv#
