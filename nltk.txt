@@ -1,4 +1,2 @@
 stopwords
-WordNetLemmatizer
-PorterStemmer
-word_tokenize
+punkt
