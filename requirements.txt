@@ -20,7 +20,6 @@ click==7.1.1
 configparser==3.5.3
 constantly==15.1.0
 cryptography==2.1.4
-cupshelpers==1.0
 cycler==0.10.0
 dask==2.14.0
 decorator==4.4.2
