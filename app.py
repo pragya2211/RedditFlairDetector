@@ -5,6 +5,8 @@ import modeltest
 import json
 import os
 port = int(os.environ.get("PORT",5000))
+jsonfilepath = "./static/sample.json"
+
 
 app = Flask(__name__)
 @app.route('/')
@@ -64,8 +66,9 @@ def automated_testing():
 			l.append(dictionary)
 		print(size)
 		json_object = json.dumps(l) 			  
-		with open("sample.json", "w") as outfile: 
+		with open(jsonfilepath, "w") as outfile: 
 		    outfile.write(json_object)
+		outfile.close()
 	return render_template("book.html", lis=lis, lis_predicted = lis_predicted,lis_actual = lis_actual,size = size)
 
 
