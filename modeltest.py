@@ -8,13 +8,10 @@ import praw
 import json
 from flask import request
 import pandas as pd
-import io
 import nltk
-import random
 from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
 from nltk.stem import PorterStemmer
-from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.tokenize import word_tokenize
 import pickle
 
 client_id = "LoffJKJOYt2vYg"
