@@ -80,6 +80,9 @@ def automated_testing():
 def download_file():
 	path = "./static/sample.json"
 	return send_file(path, as_attachment=True)
+@app.route('/main', methods=['GET', 'POST'])
+def main():
+	return render_template("index.html")
 
 
 

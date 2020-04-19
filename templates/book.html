@@ -13,6 +13,10 @@
 		{
 			color: #4CAF50;
 		}
+		h3
+		{
+			color: #4CAF50;
+		}
 		input[type=submit] 
 		{
 		width: 10%;
@@ -32,7 +36,7 @@
 </head>
 <body>
 	<div><h2> Output of links in the file: </h2></div>
-	<h4> Download file</h4>
+	<h3> Download file</h3>
 	<p>
 	<a href="{{ url_for('.download_file') }}">Download</a>
 	</p>
@@ -43,7 +47,7 @@
        <br>
        <br>
     {% endfor %}
-    <form action="{{url_for('root')}}" method="POST">
+    <form action="{{ url_for('main') }}" method="POST">
 				<input type="submit" name="home" value="Home">
 	</form>
 
