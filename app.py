@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request, redirect
+from flask import Flask, render_template,url_for,request, redirect, session
 import modeltest
 from werkzeug.utils import secure_filename
 import modeltest
@@ -43,12 +43,15 @@ def automated_testing():
 	name = ""
 	if request.method == 'POST':
 		f = request.files['file']
-		name = str(f.filename)
-		f.save(secure_filename(f.filename))
-		f.close()
-	if(name != ""):
-		f = open(name, "r")
-		for line in f:
+		print(f)
+		#print(f.read())
+		lines = f.readlines()
+		print(lines)
+		for line in lines:
+			line = line.strip()
+			line = str(line)
+			line = line[2:]
+			line = line[:-1]
 			print(line)
 			lis.append(line)
 			actual = str(modeltest.actual(line))
@@ -58,7 +61,7 @@ def automated_testing():
 			lis_predicted.append(predicted)
 			size = size+1
 			dictionary ={line:predicted}
-			l.append(dictionary) 
+			l.append(dictionary)
 		print(size)
 		json_object = json.dumps(l) 			  
 		with open("sample.json", "w") as outfile: 
