@@ -69,6 +69,11 @@ def automated_testing():
 		with open(jsonfilepath, "w") as outfile: 
 		    outfile.write(json_object)
 		outfile.close()
+		with open('./static/sample.json') as f:
+			data = json.load(f)
+		print(data)
+
+
 	return render_template("book.html", lis=lis, lis_predicted = lis_predicted,lis_actual = lis_actual,size = size)
 
 
