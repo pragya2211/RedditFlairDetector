@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request, redirect, session
+from flask import Flask, render_template,url_for,request, redirect, session,send_file
 import modeltest
 from werkzeug.utils import secure_filename
 import modeltest
@@ -75,6 +75,11 @@ def automated_testing():
 
 
 	return render_template("book.html", lis=lis, lis_predicted = lis_predicted,lis_actual = lis_actual,size = size)
+
+@app.route('/download')
+def download_file():
+	path = "./static/sample.json"
+	return send_file(path, as_attachment=True)
 
 
 

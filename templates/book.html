@@ -6,7 +6,7 @@
 	<style>
 		div
 		{
-			margin-left: 250px;
+			margin-left: 270px;
 		}
 		
 		h2
@@ -32,6 +32,10 @@
 </head>
 <body>
 	<div><h2> Output of links in the file: </h2></div>
+	<h4> Download file</h4>
+	<p>
+	<a href="{{ url_for('.download_file') }}">Download</a>
+	</p>
     {% for i in range(size) %}
     	<h4> Link: {{ lis[i] }}</h4>
        <h4> Predicted Flair: {{ lis_predicted[i] }}</h4>
