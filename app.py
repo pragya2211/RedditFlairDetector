@@ -1,4 +1,4 @@
-from flask import Flask, render_template,url_for,request, redirect, session,send_file
+from flask import Flask, render_template,url_for,request, redirect, session,send_file, jsonify
 import modeltest
 from werkzeug.utils import secure_filename
 import modeltest
@@ -29,23 +29,23 @@ def results():
 	
 	return render_template('index.html', predicted = predicted,actual = actual)
 
-@app.route('/upload', methods=['GET', 'POST'])
+"""@app.route('/upload', methods=['GET', 'POST'])
 def upload():
-    return render_template('upload.html')
+    return render_template('upload.html')"""
 
 @app.route('/automated_testing', methods = ['GET', 'POST'])
 def automated_testing():
 	#content = ""
-	l= []
+	l= ""
 	lis = []
 	lis_predicted = []
 	lis_actual = []
-
+	l = {}
 	size = 0
 	name = ""
 	if request.method == 'POST':
-		f = request.files['file']
-		print(f)
+		f = request.files["upload_file"]
+		#print(f)
 		#print(f.read())
 		lines = f.readlines()
 		print(lines)
@@ -62,8 +62,9 @@ def automated_testing():
 			lis_actual.append(actual)
 			lis_predicted.append(predicted)
 			size = size+1
-			dictionary ={line:predicted}
-			l.append(dictionary)
+			l[line] = predicted
+			"""dictionary ={line:predicted}
+												l = l+ str(dictionary)"""
 		print(size)
 		json_object = json.dumps(l) 			  
 		with open(jsonfilepath, "w") as outfile: 
@@ -72,9 +73,13 @@ def automated_testing():
 		with open('./static/sample.json') as f:
 			data = json.load(f)
 		print(data)
+		return jsonify(l)
+	else:
+		return render_template("automated.html")
 
-
-	return render_template("book.html", lis=lis, lis_predicted = lis_predicted,lis_actual = lis_actual,size = size)
+	"""else:
+					return render_template('upload.html')"""
+	#return render_template("book.html", lis=lis, lis_predicted = lis_predicted,lis_actual = lis_actual,size = size)
 
 @app.route('/download')
 def download_file():
@@ -92,6 +97,7 @@ def main():
 @app.errorhandler(404)
 def page_not_found(error):
     return 'This page does not exist', 404
+
 
 
 

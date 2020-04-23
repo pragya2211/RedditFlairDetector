@@ -14,11 +14,11 @@ from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 import pickle
 
-client_id = ""
-client_secret = ""
-user_agent= ""
-username = ""
-password = ""
+client_id = "LoffJKJOYt2vYg"
+client_secret = "mUy-jpJ6nCUxPRj5rE7_qttqGqE"
+user_agent= "Reddit Flare detection"
+username = "pragya2211"
+password = "Pragya2211!"
 
 reddit = praw.Reddit(client_id = client_id,client_secret=client_secret,
                     user_agent = user_agent,username= username,
