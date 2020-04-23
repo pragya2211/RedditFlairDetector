@@ -80,15 +80,15 @@ The app also provides a benefit o automated testing.
 ###How to use:
 
 Send a post request to [Link](https://flair-predictor.herokuapp.com/automated_testing) with a text file.
-###How it works:
+### How it works:
 -The app reads all the urls in the file line by line and predict the flair
 - The same is stored in json file.
 
-###Output:
+### Output:
 
 It will be a json file with url as key and predicted flair as value.
 
-###Sample file:
+### Sample file:
 
 A sample file is provided in this repository: [Link](https://github.com/pragya2211/RedditFlairDetector/blob/master/samplefile.txt). 
 You can use a file similar to this pattern for automated testing. 
