@@ -1,7 +1,7 @@
 # Reddit Flair Detector
 
 The link for the app : https://flair-predictor.herokuapp.com/
-The link for automated testing(also avaialable through the app) : https://flair-predictor.herokuapp.com/upload
+The link for automated testing(also avaialable through the app) : https://flair-predictor.herokuapp.com/automated_testing
 This is an app to detect flairs of Reddit India, r/india. 
 The app takes input from the user, in the form of URL for the post and return the predicted and actual flair of the post. The application has used been deployed on Heroku server. It also has an option of automated tesing the app. 
 
@@ -73,5 +73,25 @@ The app is deployed on heroku using this github repository.
 	- Using body as a feature:0.22
 	- Using comments as a feature:0.52
 	- Using combine as feature:0.64	
+	
+## Automated testing:
+
+The app also provides a benefit o automated testing.
+###How to use:
+
+Send a post request to [Link](https://flair-predictor.herokuapp.com/automated_testing) with a text file.
+###How it works:
+-The app reads all the urls in the file line by line and predict the flair
+- The same is stored in json file.
+
+###Output:
+
+It will be a json file with url as key and predicted flair as value.
+
+###Sample file:
+
+A sample file is provided in this repository: [Link](https://github.com/pragya2211/RedditFlairDetector/blob/master/samplefile.txt). 
+You can use a file similar to this pattern for automated testing. 
+
     
 
